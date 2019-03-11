@@ -31,12 +31,12 @@ class HmacResponseSigner
     public function getSignedResponse(RequestInterface $request, ResponseInterface $response): ResponseInterface
     {
         $keyLoader = new KeyLoader([$this->keyId => $this->keySecret]);
-        $authenticator = new RequestAuthenticator($keyLoader);
+        $requestAuthenticator = new RequestAuthenticator($keyLoader);
 
-        $key = $authenticator->authenticate($request);
+        $key = $requestAuthenticator->authenticate($request);
 
-        $signer = new ResponseSigner($key, $request);
+        $responseSigner = new ResponseSigner($key, $request);
 
-        return $signer->signResponse($response);
+        return $responseSigner->signResponse($response);
     }
 }
