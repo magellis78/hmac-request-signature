@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace BE\HmacRequestValidation;
+namespace BE\HmacRequestValidator;
 
 use Acquia\Hmac\Guzzle\HmacAuthMiddleware;
 use Acquia\Hmac\Key;

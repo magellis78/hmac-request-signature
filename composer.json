@@ -1,9 +1,22 @@
 {
-    "name": "brandembassy/hmac-request-validation",
+    "name": "brandembassy/hmac-request-validator",
     "minimum-stability": "stable",
     "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "BE\\HmacRequestValidator\\": "src"
+        }
+    },
     "require": {
         "acquia/http-hmac-php": "^4.0",
         "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "brandembassy/coding-standard": "^5.2"
+    },
+    "scripts": {
+        "phpcs": "./vendor/bin/phpcs --standard=BrandEmbassyCodingStandard src",
+        "phpcbf": "./vendor/bin/phpcbf --standard=BrandEmbassyCodingStandard src",
+        "phpstan": "./vendor/bin/phpstan analyze -c phpstan.neon src"
     }
 }
