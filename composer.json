@@ -1,0 +1,9 @@
+{
+    "name": "brandembassy/hmac-request-validation",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "require": {
+        "acquia/http-hmac-php": "^4.0",
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
