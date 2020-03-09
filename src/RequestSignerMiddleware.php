@@ -2,6 +2,7 @@
 
 namespace BrandEmbassy\HmacRequestValidator;
 
+use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 
 final class RequestSignerMiddleware
@@ -44,7 +45,7 @@ final class RequestSignerMiddleware
 
     public function __invoke(callable $handler): callable
     {
-        return function ($request, array $options) use ($handler) {
+        return function (RequestInterface $request, array $options) use ($handler): PromiseInterface {
             $request = $this->signRequest($request);
 
             return $handler($request, $options);
