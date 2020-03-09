@@ -4,19 +4,20 @@
     "license": "proprietary",
     "autoload": {
         "psr-4": {
-            "BE\\HmacRequestValidator\\": "src"
+            "BrandEmbassy\\HmacRequestValidator\\": "src"
         }
     },
     "require": {
-        "acquia/http-hmac-php": "^4.0",
         "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
-        "brandembassy/coding-standard": "^5.2"
+        "brandembassy/coding-standard": "^8.0",
+        "phpunit/phpunit": "^9.0"
     },
     "scripts": {
         "phpcs": "./vendor/bin/phpcs --standard=BrandEmbassyCodingStandard src",
         "phpcbf": "./vendor/bin/phpcbf --standard=BrandEmbassyCodingStandard src",
-        "phpstan": "./vendor/bin/phpstan analyze -c phpstan.neon src"
+        "phpstan": "./vendor/bin/phpstan analyze -c phpstan.neon src",
+        "phpunit": "./vendor/bin/phpunit src --no-coverage"
     }
 }
