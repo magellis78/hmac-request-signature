@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace BrandEmbassy\HmacRequestValidator;
+namespace BrandEmbassy\HmacRequestSignature;
 
 use GuzzleHttp\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
@@ -30,6 +30,8 @@ final class SignedRequestValidatorTest extends TestCase
 
     /**
      * @dataProvider failedVerificationHeadersProvider
+     *
+     * @param array<string> $headers
      */
     public function testSignatureVerificationFailed(string $expectedExceptionMessage, array $headers): void
     {
@@ -44,6 +46,9 @@ final class SignedRequestValidatorTest extends TestCase
     }
 
 
+    /**
+     * @return  array<string, array<int, array<string, string>|string>>
+     */
     public function failedVerificationHeadersProvider(): array
     {
         return [
@@ -74,6 +79,9 @@ final class SignedRequestValidatorTest extends TestCase
     }
 
 
+    /**
+     * @param array<string> $headers
+     */
     private function createRequest(array $headers = []): RequestInterface
     {
         $request = new ServerRequest('post', '/', $headers);

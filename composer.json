@@ -1,17 +1,17 @@
 {
-    "name": "brandembassy/hmac-request-validator",
+    "name": "brandembassy/hmac-request-signature",
     "minimum-stability": "stable",
     "license": "proprietary",
     "autoload": {
         "psr-4": {
-            "BrandEmbassy\\HmacRequestValidator\\": "src"
+            "BrandEmbassy\\HmacRequestSignature\\": "src"
         }
     },
     "require": {
         "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
-        "brandembassy/coding-standard": "^8.0",
+        "brandembassy/coding-standard": "^8.1",
         "phpunit/phpunit": "^9.0"
     },
     "scripts": {
